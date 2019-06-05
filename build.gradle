@@ -50,8 +50,6 @@ jar{
 		from 'LICENSE.txt'
 	}
 	
-	println("ss -> $groupId -> $rootPackageName -> ")
-	
     // define proper manifest
     manifest {
         attributes 'Specification-Title'   : rootProject.name,
