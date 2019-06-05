@@ -6,3 +6,5 @@
 classes/
 build/
 srcGen/
+.gradle/
+.settings/
