@@ -2,9 +2,10 @@
 .classpath
 .project
 
-# other generated files
+# other files
 classes/
 build/
 srcGen/
 .gradle/
 .settings/
+.mvn-security
