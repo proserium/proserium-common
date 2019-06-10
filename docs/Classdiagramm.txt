@@ -1,0 +1,103 @@
+//The node.
+class Node {
+- id : string [1] //The identifier as UUID.
+- name : string [1] //The node name.
+- aliasName : string [1] //The alias name.
+- description : string [0..1] //The node description.
+- serverInformation : ServerInformation[1] //The server information.
+- serverRuntimeInformation :ServerRuntimeInformation[1] //The server runtime information.
+- nodeRuntimeInformation : NodeRuntimeInformation[1] //The node runtime information.
+}
+
+//The version.
+class Version {
+- majorNumber : string[1]  //The major number.
+- minorNumber : string[1]  //The minor number.
+- buildNumber : string[1]  //The build number.
+- versionDate: date [0..1] //The date of the version.
+}
+
+//The server information.
+class ServerInformation {
+- operationSystemInformation : OperationSystemInformation [1] //Describes the operation system information.
+- uptime : date [1] //The uptime information.
+- cpu : integer [1] //The number of CPU's.
+- core : integer [1] //The number of core's per CPU.
+- userInformation : UserInformation[1] //The user information.
+- ramInformation : SizeInformation[1] //The ram size information in bytes.
+- discInformation : SizeInformation[1] //The disc size information in bytes.
+- networkInformation : NetworkInformation[1..*] //The network information.
+- pathInformation : PathInformation[1] //The path information.
+}
+
+//The operating system information.
+class OperationSystemInformation {
+- name : string [1]     //Describes the operation system name.
+- version: Version [1]  //Version of the operating system.
+}
+
+//The size information.
+class SizeInformation {
+- total : long //The total size.
+- used : long  //The used size.
+- free : long  //The free size.
+}
+
+//The network information.
+class NetworkInformation {
+- name : string[1]        //The network name.
+- macAddress : string[1]  //The mac address.
+- ipAddress : string[1]   //The IP address.
+- netmask : string[1]     //The net mask.
+- broadcast : string[1]   //The broadcast address.
+- gateway : string[1]     //The gateway address.
+- mtu : string[1]         //The mtu information.
+}
+
+//The path information.
+class PathInformation {
+- installationPath : string [1] //The installation path.
+- workingPath : string [1]      //The working path.
+- tempPath : string[1]          //The temp path.
+}
+
+// The user information.
+class UserInformation {
+- name : string [1]             //The username.
+}
+
+// The node runtime information
+class NodeRuntimeInformation {
+- description : string [0..1]   //The node description.
+
+- javaVersion: Version [1]      //Java version.
+- javaPath: PathInformation [1] //Java path information.
+- javaMemoryInformation : SizeInformation[1] //The java memory information in bytes.
+
+- openPorts
+}
+
+// The url.
+class URL {
+- protocol : string[1] //The protocol.
+- hostname : string[1] //The hostname.
+- port : integer[1]    //The port.
+- path : string[1]     //The path.
+}
+
+//The service.
+class Service {
+- id : string [1]  //The identifier as UUID.
+- name : string[1] //The service name.
+- url : string[1]  //The access url.
+}
+
+
+
+//nice to have:
+//
+class ServerRuntimeInformation {
+- numberOfProcesses : long [1]  //The number of processes.
+- numberOfUsers :  long [1]     //The number of users.
+- numberOfOpenFiles : long [1]  //The number of open files.
+}
