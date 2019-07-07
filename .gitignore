@@ -1,11 +1,12 @@
 # Eclipse project files
+.settings/
 .classpath
 .project
+.classes/
 
 # other files
-classes/
-build/
-srcGen/
 .gradle/
-.settings/
-.mvn-security
+build/
+
+# generated source
+srcGen/
