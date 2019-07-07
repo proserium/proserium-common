@@ -1,6 +1,6 @@
 /*
  * build.gradle
- *  
+ *
  * Copyright by proserium, all rights reserved.
  * MIT License: https://mit-license.org
  */
@@ -27,14 +27,14 @@ init {
 	println("Version $version, $dateTimestamp (${System.properties['user.name']})")
 	println("Java v${System.properties['java.version']}, target $targetCompatibility (${System.properties['java.vendor']}, ${System.properties['os.name']})")
 	println(LINE)
-	
+
 	groupId = "$groupId"
 }
 
-def mvnSecurity = new Properties()
-file(".mvn-security").withInputStream { props.load(it) }
-def mvnUser = props.getProperty("user")
-def mvnPassword = props.getProperty("password")
+//def mvnSecurity = new Properties()
+//file(".mvn-security").withInputStream { props.load(it) }
+//def mvnUser = props.getProperty("user")
+//def mvnPassword = props.getProperty("password")
 
 if (JavaVersion.current().isJava8Compatible()) {
     allprojects {
@@ -49,7 +49,7 @@ jar{
 	into 'META-INF', {
 		from 'LICENSE.txt'
 	}
-	
+
     // define proper manifest
     manifest {
         attributes 'Specification-Title'   : rootProject.name,
@@ -60,7 +60,7 @@ jar{
                    'Build-Timestamp'       : new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ").format(new Date()),
                    'Created-By'            : "Gradle ${gradle.gradleVersion}",
                    'Build-Jdk'             : "${System.properties['java.version']} (${System.properties['java.vendor']} ${System.properties['java.vm.version']})",
-                   'Build-OS'              : "${System.properties['os.name']} ${System.properties['os.arch']} ${System.properties['os.version']}"				   
+                   'Build-OS'              : "${System.properties['os.name']} ${System.properties['os.arch']} ${System.properties['os.version']}"
     }
 }
 
@@ -88,6 +88,6 @@ repositories {
 dependencies {
 	compile 'net.sf.jptools:jptools:1.6.1-SNAPSHOT'
 	runtime 'net.sf.jptools:jptools:1.6.1-SNAPSHOT'
-	
+
     testCompile group: 'junit', name: 'junit', version: '4.+'
 }
