@@ -8,6 +8,7 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 apply plugin: 'signing'
+apply plugin: 'checkstyle'
 
 def groupId = 'net.proserium'
 def rootPackageName = 'net.proserium.common'
@@ -85,9 +86,20 @@ repositories {
 	maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
 }
 
+eclipse {
+	classpath {
+		defaultOutputDir = file('build-eclipse')
+	}
+}
+
+test {
+    useJUnitPlatform()
+}
+
 dependencies {
 	compile 'net.sf.jptools:jptools:1.6.1-SNAPSHOT'
 	runtime 'net.sf.jptools:jptools:1.6.1-SNAPSHOT'
 
-    testCompile group: 'junit', name: 'junit', version: '4.+'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.3.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.3.1'
 }

@@ -1,5 +1,7 @@
 # Eclipse project files
 .classes/
+bin/
+.classpath
 
 # other files
 .gradle/
