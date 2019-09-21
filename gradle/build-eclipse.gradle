@@ -4,19 +4,21 @@
  * Copyright by proserium, all rights reserved.
  * MIT License: https://mit-license.org
  */
- 
 apply plugin: 'eclipse'
 
-// properly synch eclipse .classpath file
+
+/***************************************************************************************
+ * Properly synch eclipse .classpath file
+ ***************************************************************************************/
 eclipse {
 	classpath  {
 		defaultOutputDir = file('build-eclipse')
-		
+
 		file {
 			whenMerged {
 				// use default Output for all source-folders. see also defaultOutputDir per project
 				entries.each { source ->
-								if (source.kind == 'src' && !source.path.startsWith('/')) { 
+								if (source.kind == 'src' && !source.path.startsWith('/')) {
 									// only Source-folders in the project starting with '/' are project-references
 									source.output = null
 								}
@@ -24,10 +26,12 @@ eclipse {
 			}
 		}
     }
-
 }
 
-// extend clean
+
+/***************************************************************************************
+ * Extend clean
+ ***************************************************************************************/
 clean {
     delete 'build-eclipse'
 }

@@ -2,6 +2,7 @@
 .classes/
 bin/
 .classpath
+.settings
 
 # other files
 .gradle/
