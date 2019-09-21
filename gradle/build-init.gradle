@@ -4,8 +4,11 @@
  * Copyright by proserium, all rights reserved.
  * MIT License: https://mit-license.org
  */
- 
 
+
+/***************************************************************************************
+ * Init
+ ***************************************************************************************/
 init {
     def LINE = '****************************************************************************************'
     def dateTimestamp = new java.text.SimpleDateFormat("dd.MM.yyyy").format(new Date())
