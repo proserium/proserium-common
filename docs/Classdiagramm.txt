@@ -5,7 +5,7 @@ class Node {
 - aliasName : string [1] //The alias name.
 - description : string [0..1] //The node description.
 - serverInformation : ServerInformation[1] //The server information.
-- serverRuntimeInformation :ServerRuntimeInformation[1] //The server runtime information.
+- serverRuntimeInformation : ServerRuntimeInformation[1] //The server runtime information.
 - nodeRuntimeInformation : NodeRuntimeInformation[1] //The node runtime information.
 }
 
