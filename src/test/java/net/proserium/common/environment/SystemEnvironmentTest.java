@@ -7,13 +7,12 @@
 package net.proserium.common.environment;
 
 import org.junit.jupiter.api.Test;
-import jptools.logger.Logger;
 
 public class SystemEnvironmentTest {
 
-  
-  private static final Logger log = Logger.getLogger(SystemEnvironmentTest.class);
-
+  /**
+   * TEst access system environment
+   */
   @Test
   public void accessSystemEnvironment() {
     SystemEnvironmentFactory.getInstance().getSystemEnvironment().getHostname();
