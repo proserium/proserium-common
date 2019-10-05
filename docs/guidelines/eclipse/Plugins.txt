@@ -1,0 +1,5 @@
+Checkstyle
+SpotBugs
+EasyShell
+AnyEdit
+Enhanced Class Decompiler
