@@ -26,7 +26,7 @@ public interface IProcessSystemExecuter {
    * Execute a new command
    *
    * @param path the path to execute the command or null
-   * @param numberOfSecondsToWait the number of seconds to wait. If the value <= 0, it waits until
+   * @param numberOfSecondsToWait the number of seconds to wait. If the value less or equals 0, it waits until
    *        it is executed
    * @param commandList the command list
    * @return the process

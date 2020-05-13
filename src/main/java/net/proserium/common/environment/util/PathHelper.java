@@ -33,7 +33,8 @@ public final class PathHelper {
   /**
    * Constructor
    */
-  private PathHelper() {}
+  private PathHelper() {    
+  }
 
 
   /**
