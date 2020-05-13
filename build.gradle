@@ -11,6 +11,6 @@ apply from: 'gradle/build-proserium.gradle'
  * Define project dependencies
  ***************************************************************************************/
 dependencies {
-	compile 'net.sf.jptools:jptools:1.6.1-SNAPSHOT'
-	runtime 'net.sf.jptools:jptools:1.6.1-SNAPSHOT'
+	compile 'net.sf.jptools:jptools:1.7.0'
+	runtime 'net.sf.jptools:jptools:1.7.0'
 }
